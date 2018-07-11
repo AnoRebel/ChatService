@@ -31,4 +31,4 @@ yarn start
 ```
  
  ## TODO
-[] Host online with a free static site hosting site (probably <a href="https://www.netlify.com">Netlify</a> since it intergrates well with github.)..
+- [ ] Host online with a free static site hosting site (probably <a href="https://www.netlify.com">Netlify</a> since it intergrates well with github.)..
