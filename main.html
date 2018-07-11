@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Hide this line for IE (needed for Firefox and others) -->
+	<![if !IE]>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<![endif]>
+	<!-- This is needed for IE -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+    
+    <title>Chat Service</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-4.2.2.js"></script>
+    <script src="static/js/video.js"></script>
+  </head>
+  <body>
+
+    <div id="loading">
+      <img src="loading.svg" alt="Loading spinner">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">Chat Service</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarNavDropdown" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav mr-auto">
+                  <li class="nav-item active mx-3">
+                      <a class="nav-link" href="main.html">Home</a>
+                  </li>
+
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item mx-3">
+                      <a class="nav-link" href="main.html">Chat</a>
+                  </li>
+                <li class="nav-item mx-3" style="cursor: pointer;">
+                	<a id="btn-login" class="nav-link">Log In</a>
+                </li>
+                <li class="nav-item mx-3" style="cursor: pointer;">
+                	<a id="btn-logout" class="nav-link">Log Out</a>
+                </li>
+                  
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+    <div class="container">
+      <header>
+        <h1><a href="/">Peep</a></h1>
+        <h2><a href="/">A simple chat/conferencing tool</a></h2>
+      </header>
+
+      <div class="content">
+      	<div class="row">
+        	<div class="col"></div>
+        	<div class="col-md-auto align-self-center">
+        		<p id="enabvid"></p>
+          	<div id="url" class="alert alert-dark" role="alert">
+            	<span id="roomIntro">ROOM URL</span>: <span id="roomUrl"></span>
+          	</div>
+        </div>
+        <div class="col"></div>
+      </div>
+      </div>
+
+      <div id="remotes" class="row">
+        <div class="col-md-6">
+          <div class="videoContainer">
+            <video id="selfVideo" oncontextmenu="return false;"></video>
+            <meter id="localVolume" class="volume" min="-45" max="-20" high="-25" low="-40"></meter>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+  <hr />
+  <div id="footer">
+
+      <div class="text-center">
+
+            <!--Facebook-->
+            <a class="fb-ic" href="https://facebook.com/anorebel">
+                <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+                <!--Twitter-->
+            <a class="tw-ic" href="https://twitter.com/AnoRebel">
+                <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+                <!--Google +-->
+            <a class="gplus-ic" href="https://plus.google.com/">
+                <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+                <!--Linkedin-->
+            <a class="li-ic" href="https://tz.linkedin.com/in/adam-salehe-4b958b109">
+                <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+                <!--Instagram-->
+            <a class="ins-ic" href="https://instagram.com/ano4rebel">
+                <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+
+            <!--Copyright-->
+            <p class="py-4 footer-copyright text-center">&copy; 2018 <a href="https://hackeac.com"> HackEAC </a> </p>
+            <!--/Copyright-->
+
+        </div>
+        <!--/Footer Links-->
+    </div>
+    
+  </div>
+  <!--/Footer-->
+                      
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Popper js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!-- Bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Auth0 widget -->
+  <script src="http://cdn.auth0.com/js/lock/11.0.0/lock.min.js"></script>
+  <script src="static/js/auth0-variables.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
