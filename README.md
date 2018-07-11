@@ -29,3 +29,6 @@ Start the server (default port 5001, which you can change to any in the package.
 ```sh
 yarn start
 ```
+ 
+ ## TODO
+[] Host online with a free static site hosting site (probably <a href="https://www.netlify.com">Netlify</a> since it intergrates well with github.)..
