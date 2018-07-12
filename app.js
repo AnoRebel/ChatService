@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
   var lock = new Auth0Lock('FsAbcVtZwTUmYkHsWDK3mHF3ZAD6k9Nh', 'anorebel.auth0.com', {
     autoclose: true,
     auth: {
-      redirectUrl: 'http://localhost:5001/main.html',
+      redirectUrl: 'https://peep.netlify.com/main.html',
       responseType: 'token id_token',
       audience: 'https://' + 'anorebel.auth0.com' + '/userinfo',
       params: {
