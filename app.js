@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
   content.style.display = 'block';
   loadingSpinner.style.display = 'none';
 
-  var lock = new Auth0Lock('FsAbcVtZwTUmYkHsWDK3mHF3ZAD6k9Nh', 'anorebel.auth0.com', {
+  var lock = new Auth0Lock('', 'anorebel.auth0.com', {
     autoclose: true,
     auth: {
       redirectUrl: 'https://peep.netlify.com/main.html',
